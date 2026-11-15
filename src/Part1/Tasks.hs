@@ -2,7 +2,6 @@ module Part1.Tasks where
 
 import Util(notImplementedYet)
 import Data.Fixed (mod')
-import Data.List (sort)
 
 eps = 1e-5
 reduceAngle x = (x + pi) `mod'` (2*pi) - pi 
@@ -48,7 +47,7 @@ myPow x p = iterate (*x) 1 !! fromIntegral p
 -- является ли данное число простым?
 isPrime :: Integer -> Bool
 isPrime n = length divs == 2
-    where divs = filter ((== 0) . (n `mod`)) [1..n]
+    where divs = filter ((== 0) . (n `mod`)) [2..n]
 
 type Point2D = (Double, Double)
 
